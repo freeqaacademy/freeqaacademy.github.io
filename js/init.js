@@ -1,7 +1,7 @@
 (function($){
   $(function(){
     $('.button-collapse').sideNav();
-    
+    smoothScroll();
     elementPreloader();
     $.get( "https://api.github.com/users/freeqaacademy/repos", function( data ) {
       $(data).each(function(index, element){
@@ -18,5 +18,18 @@ function elementPreloader() {
 
 function elementCard(name, description, url){
   $('#repos').append(
-    '<div class="row"><div class="col s12 m6"><div class="card blue-grey darken-1"><div class="card-content white-text"><span class="card-title">'+ name +'</span><p>'+ description +'</p></div><div class="card-action"><a target="_blank" href="'+ url +'">Repositório</a></div></div></div></div>');
+    '<div class="col s12 m6"><div class="card blue-grey darken-1"><div class="card-content white-text"><span class="card-title">'+ name +'</span><p>'+ description +'</p></div><div class="card-action"><a target="_blank" href="'+ url +'">Repositório</a></div></div></div>');
+}
+
+function smoothScroll() {
+  $("a").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({ scrollTop: $(hash).offset().top }, 800, function(){
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    }  
+  });
 }

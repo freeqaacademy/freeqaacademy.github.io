@@ -14,19 +14,19 @@
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
 </head>
-<body>
+<body id="home">
   <div class="navbar-fixed">
-    <nav class="blue-grey lighten-4" role="navigation">
+    <nav class="blue-grey lighten-5" role="navigation">
         <div class="nav-wrapper">
-          <a id="logo-container" href="#" class="brand-logo"><img src="./images/logo.png" alt=""></a>
+          <a id="logo-container" href="#home" class="brand-logo"><img src="./images/logo.png" alt=""></a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="#" class="black-text">Como surgiu?</a></li>
-            <li><a href="#" class="black-text">Repositórios</a></li>
+            <li><a href="#como-surgiu" class="black-text">Como surgiu?</a></li>
+            <li><a href="#repositorios" class="black-text">Repositórios</a></li>
           </ul>
     
           <ul id="nav-mobile" class="side-nav">
-            <li><a href="#">Como surgiu?</a></li>
-            <li><a href="#">Repositórios</a></li>
+            <li><a href="#como-surgiu">Como surgiu?</a></li>
+            <li><a href="#repositorios">Repositórios</a></li>
           </ul>
           <a href="#" data-activates="nav-mobile" class="button-collapse black-text"><i class="material-icons">menu</i></a>
         </div>
@@ -43,20 +43,20 @@
     </div>
   </div>
   <div class="container">
-    <div class="section">
+    <div id="como-surgiu" class="section">
       <!--   Icon Section   -->
       <div class="row">
         <div class="col s12 m12">
           <div class="icon-block">
+            <h3 class="center">Como surgiu?</h3>
             <h2 class="center black-text about-custom"><i class="material-icons">important_devices</i></h2>
-            <h5 class="center">Como surgiu?</h5>
             <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
           </div>
         </div>
       </div>
     </div>
     <br><br>
-    <div class="section">
+    <div id="repositorios" class="section">
         <!--   Icon Section   -->
         <div class="row">
           <div class="col s12 m12">
@@ -64,14 +64,14 @@
               <h5 class="center">Repositórios</h5>
               <br>
               <span id="loader"></span>
-              <span id="repos" class="light"></span>
+              <div id="repos" class="row light"></div>
             </div>
           </div>
         </div>
       </div>
   </div>
 
-  <footer class="page-footer orange">
+  <footer class="page-footer grey">
     <div class="footer-copyright">
       <div class="container">
       Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
